@@ -21,7 +21,7 @@ input_files = sorted([f for f in listdir(INPUT_DIR) if f.startswith("MUMI") and 
 jobs = Queue()
 
 for in_f in input_files:
-    out_f = in_f.replace("jpg", "png").replace("JPG", "png")
+    out_f = in_f.replace(".jpg", ".png").replace(".JPG", ".png")
     jobs.put((join(INPUT_DIR, in_f), join(OUTPUT_DIR, out_f)))
 
 

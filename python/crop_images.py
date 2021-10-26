@@ -17,7 +17,7 @@ input_files = sorted([f for f in listdir(INPUT_DIR) if f.startswith("MUMI") and 
 jobs = Queue()
 
 for in_f in input_files:
-    out_f = in_f.replace("png", "jpg")
+    out_f = in_f.replace(".png", ".jpg")
     jobs.put((in_f.replace(".png", ""), join(OUTPUT_DIR, out_f)))
 
 def run_crop(q):
