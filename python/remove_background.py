@@ -58,11 +58,6 @@ def run_remove_background(q):
         if not isfile(out_file_path):
             img_in = Image.open(in_file_path).convert("RGBA")
             img_no_bgnd = remove_background(img_in)
-
-            width, height = img_no_bgnd.size
-            if height > width:
-                img_no_bgnd = img_no_bgnd.rotate(90, expand=True)
-
             img_no_bgnd.save(out_file_path)
 
         q.task_done()
