@@ -16,7 +16,7 @@ IMAGES_DIR = join('..', 'imgs')
 INPUT_DIR = join(IMAGES_DIR, '00.Original')
 OUTPUT_DIR = join(IMAGES_DIR, '01.Background')
 
-input_files = sorted([f for f in listdir(INPUT_DIR) if f.startswith("MUMI") and f.lower().endswith("jpg")])
+input_files = sorted([f for f in listdir(INPUT_DIR) if f.lower().startswith("mumi") and f.lower().endswith("jpg")])
 
 jobs = Queue()
 
