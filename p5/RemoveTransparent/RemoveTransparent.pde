@@ -14,9 +14,10 @@ void setup() {
   background(255);
   noLoop();
 
-  String fname = "MUMI-138-Tochilinita"; // JPG
-  //String fname = "MUMI-005-Hematita"; // CMKY
+  //String fname = "MUMI-138-Tochilinita"; // JPG
+  String fname = "MUMI-005-Hematita"; // CMKY
   //String fname = "MUMI-004-1-Hematita"; // vertical
+  //String fname = "MUMI-004-2-Hematita"; // small
 
   if (args != null) {
     fname = args[0];
@@ -52,8 +53,11 @@ void setup() {
     int(mSize.x * oImage.width), int(mSize.y * oImage.height), 
     0, 0, mImage.width, mImage.height);
 
-  // TODO: min dimension to keep
-  mImage.save(dataPath(OUTPUT_IMAGES_DIR + "/" + fname + ".jpg"));
+  if ((mImage.width > 1000) || (mImage.height > 1000)) {
+    mImage.save(dataPath(OUTPUT_IMAGES_DIR + "/" + fname + ".jpg"));
+  } else {
+    mImage.save(dataPath(OUTPUT_IMAGES_DIR + "/_x/" + fname + ".jpg"));
+  }
 
   exit();
 }
