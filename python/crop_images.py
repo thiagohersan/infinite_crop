@@ -26,7 +26,10 @@ def run_crop(q):
         in_file_name, out_file_path = q.get()
         if not isfile(out_file_path):
             p = Popen(["processing-java", "--sketch=%s" % P5_SKETCH_PATH, "--run", "%s" % in_file_name])
-            p.wait()
+            try:
+                p.wait(timeout=60)
+            except:
+                print("%s timedout" % in_file_name)
         q.task_done()
 
 
