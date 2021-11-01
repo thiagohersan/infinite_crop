@@ -9,8 +9,6 @@ from PIL import Image
 
 from rembg.bg import remove
 
-# TODO: only process if no result
-
 IMAGES_DIR = join('..', 'imgs')
 
 INPUT_DIR = join(IMAGES_DIR, '00.Original')
