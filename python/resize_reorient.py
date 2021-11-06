@@ -39,7 +39,7 @@ def resize_reorient(img_in, MIN_DIM):
     return img_in
 
 MIN_DIM = 1920
-def run_remove_background(q):
+def run_resize(q):
     while not q.empty():
         print("items left: %i" % jobs.qsize())
         in_file_path, out_file_path = q.get()
@@ -60,7 +60,7 @@ NUM_THREADS = 8
 start_s = time()
 
 for i in range(NUM_THREADS):
-    worker = Thread(target=run_remove_background, args=(jobs,))
+    worker = Thread(target=run_resize, args=(jobs,))
     worker.start()
 
 jobs.join()
